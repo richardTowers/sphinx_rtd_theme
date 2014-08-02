@@ -3,15 +3,18 @@
 
 .. _github: https://www.github.com/snide/sphinx_rtd_theme
 
+This is a fork of the main theme that adds an option not
+to serve dependencies from CDNs.
+
 """
 from setuptools import setup
 from sphinx_rtd_theme import __version__
 
 
 setup(
-    name='sphinx_rtd_theme',
+    name='sphinx_paws_theme',
     version=__version__,
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/richardTowers/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider',
     author_email='dave.snider@gmail.com',
