@@ -25,6 +25,11 @@ module.exports = function(grunt) {
           // includes files within path
           {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'}
         ]
+      },
+      js: {
+        files: [
+          {expand: true, flatten: true, src: ['bower_components/modernizr/modernizr.js'], dest: 'sphinx_rtd_theme/static/js/', filter: 'isFile'}
+        ]
       }
     },
 
@@ -67,7 +72,8 @@ module.exports = function(grunt) {
     },
     clean: {
       build: ["demo_docs/build"],
-      fonts: ["sphinx_rtd_theme/static/fonts"]
+      fonts: ["sphinx_rtd_theme/static/fonts"],
+      js: ["sphinx_rtd_theme/static/js/modernizr.js"]
     },
 
     watch: {
@@ -99,7 +105,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
+  grunt.registerTask('js', ['clean:js','copy:js']);
   grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','exec:build_sphinx']);
-}
+};
 
