@@ -108,6 +108,7 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 html_theme_options = {
     # 'sticky_navigation' : True  # Set to False to disable the sticky nav while scrolling.
+    'allow_remote_resources': False,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
